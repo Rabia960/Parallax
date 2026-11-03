@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PARALLAX | Every Move Has Another Side</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="game-header">
+        <h1>PARALLAX</h1>
+        <p>EVERY MOVE HAS ANOTHER SIDE.</p>
+    </header>
+
+    <div id="game-message" data-type="info">Select a ring on the Primary Dimension.</div>
+
+    <div id="level-banner"></div>
+    <div class="game-info">
+        <span class="chip" id="level-indicator">LEVEL 1</span>
+        <span class="chip" id="phase-indicator">PHASE: CLOCKWISE</span>
+        <span class="chip" id="move-counter">MOVES: 0</span>
+        <span class="chip" id="timer">TIME: --</span>
+        <span class="chip" id="score-chip">SCORE: 0</span>
+    </div>
+
+    <main class="game-container">
+        <section class="dimension primary">
+            <h2>PRIMARY DIMENSION</h2>
+            <div id="primary-board" class="board"></div>
+        </section>
+
+        <section class="dimension shadow">
+            <h2>SHADOW DIMENSION</h2>
+            <div id="shadow-board" class="board"></div>
+        </section>
+    </main>
+
+    <!-- This button was missing from your HTML (it had been pasted inside style.css) -->
+    <div class="game-controls">
+        <button id="undo-button">UNDO (-30)</button>
+        <button id="restart-button">RESTART LEVEL</button>
+    </div>
+
+    <section class="leaderboard">
+        <h2>GLOBAL LEADERBOARD</h2>
+        <p id="lb-status"></p>
+        <ol id="lb-list"></ol>
+    </section>
+
+    <footer class="game-footer">
+        <p>THE FRACTURED DIMENSION</p>
+        <p>KEYS: 1 / 2 / 3 PICK &middot; U UNDO &middot; R RESTART</p>
+       
+    </footer>
+
+    <div id="name-overlay" class="overlay">
+        <div class="win-card">
+            <h2>ENTER THE FRACTURE</h2>
+            <p>Solve 7 levels. Every level adds a new twist. Rings must obey BOTH dimensions.</p>
+            <input id="name-input" maxlength="16" placeholder="Your name" autocomplete="off">
+            <button id="start-button">START</button>
+        </div>
+    </div>
+
+    <div id="win-overlay" class="overlay hidden">
+        <div class="win-card">
+            <h2 id="win-title">LEVEL CLEARED</h2>
+            <p id="win-summary"></p>
+            <button id="next-button">NEXT LEVEL</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
